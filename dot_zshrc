@@ -11,6 +11,7 @@ plugins=(
   vscode
 )
 
+# Enable oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
 # Enable zsh-autocomplete
