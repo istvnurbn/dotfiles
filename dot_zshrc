@@ -6,7 +6,7 @@ plugins=(
   macos
   iterm2
   brew
-  fzf
+#  fzf
   git
   vscode
 )
@@ -15,13 +15,13 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # Enable zsh-autocomplete
-# source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 # iTerm2 shell integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # fzf integration
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Midnight Commander will load faster
 alias mc="mc --nosubshell"
