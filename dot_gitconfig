@@ -1,0 +1,17 @@
+[credential]
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[gpg]
+	format = ssh
+[user]
+	signingkey = /Users/istvnurbn/.ssh/id_rsa.pub
+	name = Istvan Urban
+	email = 51445152+istvnurbn@users.noreply.github.com
+[init]
+	defaultBranch = main
+[push]
+	followTags = true
+[pull]
+	rebase = true
