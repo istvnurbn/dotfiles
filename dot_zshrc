@@ -24,4 +24,4 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Midnight Commander will load faster
-alias mc="mc --nosubshell"
+alias mc="mc --nosubshell"eval "$(atuin init zsh)"
