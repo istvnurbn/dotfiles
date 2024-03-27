@@ -25,3 +25,4 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # Midnight Commander will load faster
 alias mc="mc --nosubshell"eval "$(atuin init zsh)"
+eval "$(atuin init zsh)"
