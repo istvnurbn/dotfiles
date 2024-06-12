@@ -15,6 +15,16 @@ plugins=(
 # Enable oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
+# First insert the common substring (zsh-autocomplete)
+# all Tab widgets
+zstyle ':autocomplete:*complete*:*' insert-unambiguous yes
+
+# all history widgets
+zstyle ':autocomplete:*history*:*' insert-unambiguous yes
+
+# ^S
+zstyle ':autocomplete:menu-search:*' insert-unambiguous yes
+
 # Enable zsh-autocomplete
 source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
