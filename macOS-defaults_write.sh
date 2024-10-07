@@ -311,6 +311,11 @@ defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 # Microsoft 365 is messed up if macOS is set to English with a different locale
 defaults write .GlobalPreferences AppleLocale en_HU
 
+# Stop macOS 15 Sequoia monthly screen recording prompts
+# Update this with the app you plan to use "/Applications/Shottr.app/Contents/MacOS/Shottr"
+# https://lapcatsoftware.com/articles/2024/8/10.html
+# defaults write ~/Library/Group\ Containers/group.com.apple.replayd/ScreenCaptureApprovals.plist "/Applications/Shottr.app/Contents/MacOS/Shottr" -date "3024-09-21 12:40:36 +0000"
+
 ###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
