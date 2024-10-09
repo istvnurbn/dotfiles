@@ -8,7 +8,6 @@ plugins=(
   macos
   iterm2
   brew
-  git
   vscode
 )
 
@@ -27,6 +26,9 @@ zstyle ':autocomplete:menu-search:*' insert-unambiguous yes
 
 # Insert prefix instead of substring
 zstyle ':completion:*:*' matcher-list 'm:{[:lower:]-}={[:upper:]_}' '+r:|[.]=**'
+
+# Wait for a minimum amount of input
+zstyle ':autocomplete:*' min-input 3
 
 # Enable zsh-autocomplete
 source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
