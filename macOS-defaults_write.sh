@@ -12,9 +12,9 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until this scipt has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-###############################################################################
-# General UI/UX                                                               #
-###############################################################################
+#################
+# General UI/UX #
+#################
 
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
@@ -49,9 +49,9 @@ sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo Hos
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
-###############################################################################
-# Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
-###############################################################################
+###############################################################
+# Trackpad, mouse, keyboard, Bluetooth accessories, and input #
+###############################################################
 
 # Trackpad: enable tap to click for this user and for the login screen
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
@@ -62,9 +62,9 @@ defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 # (e.g. enable Tab in modal dialogs)
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
-###############################################################################
-# Screen                                                                      #
-###############################################################################
+##########
+# Screen #
+##########
 
 # Require password immediately after sleep or screen saver begins
 defaults write com.apple.screensaver askForPassword -int 1
@@ -80,9 +80,9 @@ defaults write com.apple.screencapture disable-shadow -bool true
 # Reference: https://github.com/kevinSuttle/macOS-Defaults/issues/17#issuecomment-266633501
 defaults write NSGlobalDomain AppleFontSmoothing -int 1
 
-###############################################################################
-# Finder                                                                      #
-###############################################################################
+##########
+# Finder #
+##########
 
 # Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons
 defaults write com.apple.finder QuitMenuItem -bool true
@@ -145,9 +145,9 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 	OpenWith -bool true \
 	Privileges -bool true
 
-###############################################################################
-# Dock, Dashboard, and hot corners                                            #
-###############################################################################
+####################################
+# Dock, Dashboard, and hot corners #
+####################################
 
 # Minimize windows into their application’s icon
 defaults write com.apple.dock minimize-to-application -bool true
@@ -166,6 +166,7 @@ defaults write com.apple.dock expose-animation-duration -float 0.1
 
 # Remove the auto-hiding Dock delay
 defaults write com.apple.dock autohide-delay -float 0
+
 # Remove the animation when hiding/showing the Dock
 defaults write com.apple.dock autohide-time-modifier -float 0
 
@@ -178,9 +179,9 @@ defaults write com.apple.dock showhidden -bool true
 # Don’t show recent applications in Dock
 defaults write com.apple.dock show-recents -bool false
 
-###############################################################################
-# Mail                                                                        #
-###############################################################################
+########
+# Mail #
+########
 
 # Disable send and reply animations in Mail.app
 defaults write com.apple.mail DisableReplyAnimations -bool true
@@ -203,52 +204,16 @@ defaults write com.apple.mail DisableInlineAttachmentViewing -bool true
 # Disable automatic spell checking
 defaults write com.apple.mail SpellCheckingBehavior -string "NoSpellCheckingEnabled"
 
-###############################################################################
-# Spotlight                                                                   #
-###############################################################################
+##########
+# Safari #
+##########
 
-# Change indexing order and disable some search results
-# Yosemite-specific search results (remove them if you are using macOS 10.9 or older):
-# 	MENU_DEFINITION
-# 	MENU_CONVERSION
-# 	MENU_EXPRESSION
-# 	MENU_SPOTLIGHT_SUGGESTIONS (send search queries to Apple)
-# 	MENU_WEBSEARCH             (send search queries to Apple)
-# 	MENU_OTHER
-# defaults write com.apple.spotlight orderedItems -array \
-# 	'{"enabled" = 1;"name" = "APPLICATIONS";}' \
-# 	'{"enabled" = 1;"name" = "SYSTEM_PREFS";}' \
-# 	'{"enabled" = 1;"name" = "DIRECTORIES";}' \
-# 	'{"enabled" = 1;"name" = "PDF";}' \
-# 	'{"enabled" = 0;"name" = "FONTS";}' \
-# 	'{"enabled" = 1;"name" = "DOCUMENTS";}' \
-# 	'{"enabled" = 0;"name" = "MESSAGES";}' \
-# 	'{"enabled" = 1;"name" = "CONTACT";}' \
-# 	'{"enabled" = 1;"name" = "EVENT_TODO";}' \
-# 	'{"enabled" = 1;"name" = "IMAGES";}' \
-# 	'{"enabled" = 0;"name" = "BOOKMARKS";}' \
-# 	'{"enabled" = 0;"name" = "MUSIC";}' \
-# 	'{"enabled" = 0;"name" = "MOVIES";}' \
-# 	'{"enabled" = 0;"name" = "PRESENTATIONS";}' \
-# 	'{"enabled" = 0;"name" = "SPREADSHEETS";}' \
-# 	'{"enabled" = 0;"name" = "SOURCE";}' \
-# 	'{"enabled" = 1;"name" = "MENU_DEFINITION";}' \
-# 	'{"enabled" = 1;"name" = "MENU_OTHER";}' \
-# 	'{"enabled" = 1;"name" = "MENU_CONVERSION";}' \
-# 	'{"enabled" = 1;"name" = "MENU_EXPRESSION";}' \
-# 	'{"enabled" = 1;"name" = "MENU_WEBSEARCH";}' \
-# 	'{"enabled" = 0;"name" = "MENU_SPOTLIGHT_SUGGESTIONS";}'
+# Use Backspace/Delete to Go Back a Page
+defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool true
 
-# Load new settings before rebuilding the index
-# killall mds > /dev/null 2>&1
-
-# Restore to defaults
-
-# defaults delete com.apple.Spotlight orderedItems
-
-###############################################################################
-# Time Machine                                                                #
-###############################################################################
+################
+# Time Machine #
+################
 
 # Prevent Time Machine from prompting to use new hard drives as backup volume
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
@@ -256,9 +221,9 @@ defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 # Disable local Time Machine backups
 hash tmutil &> /dev/null && sudo tmutil disablelocal
 
-###############################################################################
-# Activity Monitor                                                            #
-###############################################################################
+####################
+# Activity Monitor #
+####################
 
 # Show the main window when launching Activity Monitor
 defaults write com.apple.ActivityMonitor OpenMainWindow -bool true
@@ -273,12 +238,13 @@ defaults write com.apple.ActivityMonitor ShowCategory -int 0
 defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
 defaults write com.apple.ActivityMonitor SortDirection -int 0
 
-###############################################################################
-# TextEdit and Disk Utility                   #
-###############################################################################
+#############################
+# TextEdit and Disk Utility #
+#############################
 
 # Use plain text mode for new TextEdit documents
 defaults write com.apple.TextEdit RichText -int 0
+
 # Open and save files as UTF-8 in TextEdit
 defaults write com.apple.TextEdit PlainTextEncoding -int 4
 defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
@@ -287,9 +253,9 @@ defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true
 defaults write com.apple.DiskUtility advanced-image-options -bool true
 
-###############################################################################
-# Mac App Store                                                               #
-###############################################################################
+#################
+# Mac App Store #
+#################
 
 # Enable the automatic update check
 defaults write com.apple.SoftwareUpdate AutomaticCheckEnabled -bool true
@@ -297,16 +263,16 @@ defaults write com.apple.SoftwareUpdate AutomaticCheckEnabled -bool true
 # Check for software updates daily, not just once per week
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
-###############################################################################
-# Photos                                                                      #
-###############################################################################
+##########
+# Photos #
+##########
 
 # Prevent Photos from opening automatically when devices are plugged in
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
-###############################################################################
-# Misc                                                                        #
-###############################################################################
+########
+# Misc #
+########
 
 # Microsoft 365 is messed up if macOS is set to English with a different locale
 defaults write .GlobalPreferences AppleLocale en_HU
@@ -316,9 +282,9 @@ defaults write .GlobalPreferences AppleLocale en_HU
 # https://lapcatsoftware.com/articles/2024/8/10.html
 # defaults write ~/Library/Group\ Containers/group.com.apple.replayd/ScreenCaptureApprovals.plist "/Applications/Shottr.app/Contents/MacOS/Shottr" -date "3024-09-21 12:40:36 +0000"
 
-###############################################################################
-# Kill affected applications                                                  #
-###############################################################################
+##############################
+# Kill affected applications #
+##############################
 
 for app in "Activity Monitor" \
 	"Address Book" \
