@@ -1,0 +1,21 @@
+[user]
+    name = István Urbán
+    email = 51445152+istvnurbn@users.noreply.github.com
+    signingkey = ~/.ssh/hexley_github_signing.pub
+[init]
+    defaultBranch = main
+[push]
+	followTags = true
+	autoSetupRemote = true
+[pull]
+	rebase = true
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
+[gpg]
+    format = ssh
+[credential]
+	helper = /usr/local/share/gcm-core/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true
