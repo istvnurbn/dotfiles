@@ -4,11 +4,31 @@
 
 This repository is my attempt at a relatively simple, multi-host nix configuration. It uses [nix-darwin](https://github.com/nix-darwin/nix-darwin) as the base and [home-manager](https://github.com/nix-community/home-manager) for dotfile management. Designed with the [Dendritic](https://github.com/mightyiam/dendritic) pattern so that the modules are reusable and can be extended to NixOS systems with minor modifications.
 
-This `README` is essentially how-to documentation for myself, but you might learn something from it, just as I did by looking at other people's code.
+This `README` is essentially a how-to documentation for myself, but you might learn something from it, just as I did by looking at other people's code.
 
 > [!CAUTION]
 > I don't have a background in programming, and I'm pretty new to Nix. I did my best to make the configuration modular and follow the Dendritic pattern, but that doesn't guarantee that it will work on other devices right away. Feel free to reach out or open a PR so I can improve.
 
+---
+
+## Table of Contents
+
+1. [Structure](#structure)
+2. [Modules Overview](#modules-overview)
+   - [common](#common)
+   - [darwin](#darwin)
+   - [flake](#flake)
+   - [hosts](#hosts)
+   - [steve](#steve)
+3. [Bootsrapping on a new system](bootsrapping-on-a-new-system)
+   - [macOS](macos)
+4. [To Do](#to-do)
+5. [Inspiration](#inspiration)
+6. [License](#license)
+   - [Tools](#tools)
+   - [Personal Configs](#personal-configs)
+
+---
 
 ## Structure
 
@@ -31,51 +51,51 @@ modules
  └── steve  # My user configuration and dotfiles
 ```
 
-### common/
+### common
 
 These modules are available as `flake.modules.darwin.*` and `flake.modules.nixos.*`.
 
-**nix-settings.nix**: Universal `nix`, `nixpkgs`, and garbage collection settings.  
-**home.nix**: A flake module for `home-manager`, used only for dotfiles at the moment.  
-**shell.nix**: Command line tools that I want to be available on all my systems.  
-**fonts.nix**: Quite obviuos, isn't it? :sweat_smile:  
-**media.nix**: I'm into collecting and archiving CDs and vinyls, and I've got a blog as well.  
+**[`nix-settings.nix`](./modules/common/nix-settings.nix)**: Universal `nix`, `nixpkgs`, and garbage collection settings.  
+**[`home.nix`](./modules/common/home.nix)**: A flake module for `home-manager`, used only for dotfiles at the moment.  
+**[`shell.nix`](./modules/common/shell.nix)**: Command line tools that I want to be available on all my systems.  
+**[`fonts.nix`](./modules/common/fonts.nix)**: Quite obviuos, isn't it? :sweat_smile:  
+**[`media.nix`](./modules/common/media.nix)**: I'm into collecting and archiving CDs and vinyls, and I've got a blog as well.  
 
-### darwin/
+### darwin
 
 These modules are available as `flake.modules.darwin.*`.
 
-**nix-darwin.nix**: Sets up nix-darwin on a macOS host.  
-**nix-homebrew.nix**: Homebrew with declarative tap management.  
-**system.nix**: macOS system settings managed through nix-darwin.  
-**dock.nix**: Dock related settings.  
-**finder.nix**: Finder settings, duh.  
-**brews.nix**: Some command line tools are not availbale through `nixpkgs`.  
-**casks.nix**: GUI applications are installed through Hombrew Cask.  
-**masapps.nix**: Some apps are installed from the Mac App Store.  
-**privsec.nix**: Assorted privacy and security settings.  
+**[`nix-darwin.nix`](./modules/darwin/nix-darwin.nix)**: Sets up nix-darwin on a macOS host.  
+**[`nix-homebrew.nix`](./modules/darwin/nix-homebrew.nix)**: Homebrew with declarative tap management.  
+**[`system.nix`](./modules/darwin/system.nix)**: macOS system settings managed through nix-darwin.  
+**[`dock.nix`](./modules/darwin/dock.nix)**: Dock related settings.  
+**[`finder.nix`](./modules/darwin/finder.nix)**: Finder settings, duh.  
+**[`brews.nix`](./modules/darwin/brews.nix)**: Some command line tools are not availbale through `nixpkgs`.  
+**[`casks.nix`](./modules/darwin/casks.nix)**: GUI applications are installed through Hombrew Cask.  
+**[`masapps.nix`](./modules/darwin/masapps.nix)**: Some apps are installed from the Mac App Store.  
+**[`privsec.nix`](./modules/darwin/privsec.nix)**: Assorted privacy and security settings.  
 
-### flake/
+### flake
 
-**inputs.nix**: Flake inputs aren't declared anywhere else, and they're actually the core of this configuration.  
-**default.nix**: `flake.nix`'s description picked up during generation.  
+**[`inputs.nix`](./modules/flake/inputs.nix)**: Flake inputs aren't declared anywhere else, and they're actually the core of this configuration.  
+**[`default.nix`](./modules/flake/default.nix)**: `flake.nix`'s description picked up during generation.  
 
-### hosts/
+### hosts
 
-All hosts are defined here and exposed via [`hostConfigurations.nix`](modules/hosts/hostConfigurations.nix).
+All hosts are defined here and exposed via [`hostConfigurations.nix`](./modules/hosts/hostConfigurations.nix).
 
 | Host   | Platform | Notes                       |
 | ------ | -------- | --------------------------- |
 | hexley | macOS    | 14" MacBook Pro with M1 Pro |
 
-### steve/
+### steve
 
 Personal modules to set up my user account on all systems.
 
-**user.nix**: Basic setup for the user profile on macOS and NixOS.
-**home.nix**: User settings for `home-manager`.
-**dots.nix**: Making dotfiles mutable while still being part of the Nix store.
-**dots/**: Houses the aformentioned dotfiles.
+**[`user.nix`](./modules/steve/user.nix)**: Basic setup for the user profile on macOS and NixOS.  
+**[`home.nix`](./modules/steve/home.nix)**: User settings for `home-manager`.  
+**[`dots.nix`](./modules/steve/dots.nix)**: Making dotfiles mutable while still being part of the Nix store.  
+**[`dots/`](./modules/steve/dots)**: Houses the aformentioned dotfiles.
 
 *For more details, see the comments in each file.*
 
@@ -93,8 +113,8 @@ sudo scutil --set HostName "your_hostname"
 dscacheutil -flushcache
 ```
 4. Download this repo's contets to the `dotfiles` folder of your home directory.
-5. Add a line to the [`hostConfigurations.nix`](modules/hosts/hostConfigurations.nix) file under `flake.darwinConfigurations` with the previously chosen hostname.
-6. Create a subfolder whitin the [`hosts`](modules/hosts/) folder with the same hostname.
+5. Add a line to the [`hostConfigurations.nix`](./modules/hosts/hostConfigurations.nix) file under `flake.darwinConfigurations` with the previously chosen hostname.
+6. Create a subfolder whitin the [`hosts`](./modules/hosts/) folder with the same hostname.
 7. Create a new `nix` file with the `flake.modules.darwin.your_hostname` top-level flake module and mix & match the available modules. 
 8. In the root folder of the project, run `sudo nix run nix-darwin/nix-darwin-25.11#darwin-rebuild -- switch`
 
@@ -126,6 +146,7 @@ I'm happy I was able to check out other people's code and learn from it. I've us
 **[nix-darwin](https://github.com/nix-darwin/nix-darwin)**: MIT license  
 **[nix-homebrew](https://github.com/zhaofengli/nix-homebrew)**: MIT license  
 **[home-manager](https://github.com/nix-community/home-manager)**: MIT license  
+**[just](https://github.com/casey/just)**: CC0-1.0 license
 
 ### Personal Configs
 
