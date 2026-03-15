@@ -17,6 +17,7 @@ let
       "calibre"
       "localsend"
       "thaw"
+      "tailscale-app"
       "musicbrainz-picard"
       "rustdesk"
     ];
