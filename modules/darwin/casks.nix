@@ -7,7 +7,7 @@ let
       "ghostty"
       "git-credential-manager"
       "firefox"
-      "ungoogled-chromium" # for webapps
+      "brave-browser"
       "tor-browser"
       "proton-pass"
       "proton-mail"
