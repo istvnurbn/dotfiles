@@ -132,6 +132,19 @@
     },
   },
 
+  "ssh_connections": [
+    {
+      "host": "ittaspajta",
+      "args": [],
+      "projects": [
+        {
+          "paths": ["/srv/docker"],
+        },
+      ],
+      "nickname": "ittaspajta",
+    },
+  ],
+
   "telemetry": {
     "diagnostics": false,
     "metrics": false,
