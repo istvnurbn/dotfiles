@@ -20,6 +20,7 @@ let
       "tailscale-app"
       "musicbrainz-picard"
       "rustdesk"
+      "utm"
     ];
   };
 in {
