@@ -20,4 +20,6 @@
 
     programs.home-manager.enable = true;
   };
-in {inherit flake;}
+in {
+  inherit flake;
+}
