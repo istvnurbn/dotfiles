@@ -46,13 +46,14 @@
   };
 
   linux = {
-    #users.users.steve = {
-    #  isNormalUser = true;
-    #  extraGroups = [
-    #    "networkmanager"
-    #    "wheel"
-    #  ];
-    #};
+    users.users.steve = {
+      isNormalUser = true;
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+      ];
+      hashedPassword = "$y$j9T$ae.Dmqz2N2YdPvY1xUvwu0$wdBYfrORJhqvPUPJpFP7oHsYrxBAwBec2hAKbc3KnM4";
+    };
   };
 in {
   inherit flake;
