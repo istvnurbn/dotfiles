@@ -13,6 +13,7 @@ let
       lame
       flac
       id3v2
+      recode
       ffmpeg-full
       hugo
     ];

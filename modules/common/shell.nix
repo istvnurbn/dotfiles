@@ -25,7 +25,6 @@ let
       curl
       wget
       pv
-      recode
       mmv
       gawk
       bat
