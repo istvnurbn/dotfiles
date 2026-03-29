@@ -5,7 +5,7 @@
   inherit
     (inputs.self.lib.mkHost)
     # Supported OS types
-    # linux
+    linux
     # linux-arm
     darwin
     # darwin-intel
@@ -13,6 +13,7 @@
 
   flake.nixosConfigurations = {
     # hostname = linux/linux-arm "hostname"
+    parallax = linux "parallax";
   };
 
   flake.darwinConfigurations = {
