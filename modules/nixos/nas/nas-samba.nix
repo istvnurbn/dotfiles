@@ -62,7 +62,8 @@ let
             "path" = "/srv/public";
             "comment" = "Public files";
             "public" = "yes";
-            "only guest" = "yes";
+            "guest ok" = "yes";
+            "guest only" = "yes";
             "writable" = "yes";
             "browseable" = "yes";
 

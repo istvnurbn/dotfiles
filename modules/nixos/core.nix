@@ -27,6 +27,13 @@ let
 
     # Configure console keymap
     console.keyMap = "hu";
+
+    # Do garbage collection to keep disk usage low
+    nix.gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
+    };
   };
 in {
   inherit flake;

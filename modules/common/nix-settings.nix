@@ -37,16 +37,6 @@ let
         ];
       };
 
-      # Do garbage collection to keep disk usage low
-      gc = {
-        automatic = true;
-        interval = {
-          Hour = 3;
-          Minute = 15;
-        };
-        options = "--delete-older-than 7d";
-      };
-
       # From https://jackson.dev/post/nix-reasonable-defaults/
       optimise.automatic = true;
       extraOptions = ''
