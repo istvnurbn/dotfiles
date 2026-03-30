@@ -9,7 +9,7 @@ let
 
         settings = {
           global = {
-            "server smb encrypt" = "required";
+            # "server smb encrypt" = "required";
             "server min protocol" = "SMB3_00";
             "use sendfile" = "yes";
             "workgroup" = "WORKGROUP";
@@ -62,7 +62,7 @@ let
             "path" = "/srv/public";
             "comment" = "Public files";
             "public" = "yes";
-            "guest ok" = "yes";
+            "read only" = "no";
             "guest only" = "yes";
             "writable" = "yes";
             "browseable" = "yes";
