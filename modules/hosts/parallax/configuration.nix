@@ -27,7 +27,7 @@
       hostName = "parallax";
       hostId = "d0519aef"; # Needed for ZFS head -c4 /dev/urandom | od -A none -t x4
       firewall = {
-        allowedTCPPorts = [80 443];
+        allowedTCPPorts = [80 443 6881 32400];
         allowedUDPPorts = [];
       };
     };
