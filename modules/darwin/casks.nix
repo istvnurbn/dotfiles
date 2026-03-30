@@ -21,6 +21,8 @@ let
       "musicbrainz-picard"
       "rustdesk"
       "utm"
+      "gimp"
+      "imageoptim"
     ];
   };
 in {
