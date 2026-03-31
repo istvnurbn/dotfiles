@@ -28,7 +28,8 @@
       hostId = "d0519aef"; # Needed for ZFS head -c4 /dev/urandom | od -A none -t x4
       firewall = {
         allowedTCPPorts = [80 443 6881 32400];
-        allowedUDPPorts = [];
+        allowedUDPPorts = [41641];
+        trustedInterfaces = ["tailscale0"];
       };
     };
 
@@ -39,6 +40,17 @@
     boot.zfs = {
       forceImportAll = true;
       extraPools = ["tank"];
+    };
+
+    # Enabling tailscale
+    services.tailscale = {
+      enable = true;
+
+      # Enable routing features
+      useRoutingFeatures = "both";
+
+      # Disabling logging and telemetry
+      extraDaemonFlags = ["--no-logs-no-support"];
     };
 
     # Used for backwards compatibility, please read the changelog before changing.
