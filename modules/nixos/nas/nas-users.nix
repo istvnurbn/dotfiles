@@ -64,6 +64,15 @@ let
         uid = 507;
         group = "homelab";
       };
+
+      # User for metube docker service
+      metube = {
+        isSystemUser = true;
+        createHome = false;
+        shell = "/bin/false";
+        uid = 508;
+        group = "homelab";
+      };
     };
   };
 in {
