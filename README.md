@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository is my attempt at a relatively simple, multi-host nix configuration. It uses [nix-darwin](https://github.com/nix-darwin/nix-darwin) as the base and [home-manager](https://github.com/nix-community/home-manager) for dotfile management. Designed with the [Dendritic](https://github.com/mightyiam/dendritic) pattern so that the modules are reusable and can be extended to NixOS systems with minor modifications.
+This repository is my attempt at a relatively simple, multi-host nix configuration. It uses [NixOS](https://nixos.org/) or [nix-darwin](https://github.com/nix-darwin/nix-darwin) as the base and [home-manager](https://github.com/nix-community/home-manager) for dotfile management. Designed with the [Dendritic](https://github.com/mightyiam/dendritic) pattern so that the modules are reusable and can be extended to any system with no or minor modifications.
 
 This `README` is essentially a how-to documentation for myself, but you might learn something from it, just as I did by looking at other people's code.
 
@@ -19,9 +19,11 @@ This `README` is essentially a how-to documentation for myself, but you might le
    - [darwin](#darwin)
    - [flake](#flake)
    - [hosts](#hosts)
+   - [nixos](#nixos)
    - [steve](#steve)
 3. [Bootsrapping on a new system](bootsrapping-on-a-new-system)
-   - [macOS](macos)
+   - [Mac](#mac)
+   - [PC](#pc)
 4. [To Do](#to-do)
 5. [Inspiration](#inspiration)
 6. [License](#license)
@@ -47,7 +49,7 @@ modules
  ├── flake  # Entrypoint for flake-file, the bare minimum to get everything running 
  ├── hosts  # Host-specific configuration
  ├── lib    # Houses the helper function to build nix-darwin/NixOS systems
- ├── nixos  # NixOS specific modules (currently empty)
+ ├── nixos  # NixOS specific modules
  └── steve  # My user configuration and dotfiles
 ```
 
@@ -84,9 +86,24 @@ These modules are available as `flake.modules.darwin.*`.
 
 All hosts are defined here and exposed via [`hostConfigurations.nix`](./modules/hosts/hostConfigurations.nix).
 
-| Host   | Platform | Notes                       |
-| ------ | -------- | --------------------------- |
-| hexley | macOS    | 14" MacBook Pro with M1 Pro |
+| Host     | Platform | Notes                         |
+| -------- | -------- | ----------------------------- |
+| hexley   | macOS    | 14" MacBook Pro with M1 Pro   |
+| parallax | NixOS    | Minisforum NAB6 (homelab/NAS) |
+
+### nixos
+
+**[`core.nix`](./modules/nixos/core.nix)**: Core NixOS settings like internationalisation properties, boot parameters, and timezone.  
+**[`security.nix`](./modules/nixos/security.nix)**: Firewall, SSH, and sudo settings.  
+**[`docker.nix`](./modules/nixos/docker.nix)**: Enable Docker with minimal settings and tools.  
+
+#### nas
+
+These modules are used in my homelab/NAS, so they are host-specific by nature. However, I think it's better to keep them physically here.  
+
+**[`nas-samba.nix`](./modules/nixos/nas/nas-samba.nix)**: Network share settings.  
+**[`nas-acl.nix`](./modules/nixos/nas/nas-acl.nix)**: ACL rules for common folders.  
+**[`nas-users.nix`](./modules/nixos/nas/nas-users.nix)**: System users for services run in docker.  
 
 ### steve
 
@@ -101,7 +118,7 @@ Personal modules to set up my user account on all systems.
 
 ## Bootsrapping on a new system
 
-### macOS
+### Mac
 
 1. Install Xcode Command Line Tools as Homebrew depends on it `xcode-select --install`
 2. Go ahead and install the [Lix interpreter](https://lix.systems/install/) as recommended by `nix-darwin`.
@@ -112,11 +129,28 @@ sudo scutil --set LocalHostName "your_hostname"
 sudo scutil --set HostName "your_hostname"
 dscacheutil -flushcache
 ```
-4. Download this repo's contets to the `dotfiles` folder of your home directory.
+4. Download this repo's contents to the `dotfiles` folder of your home directory.
 5. Add a line to the [`hostConfigurations.nix`](./modules/hosts/hostConfigurations.nix) file under `flake.darwinConfigurations` with the previously chosen hostname.
 6. Create a subfolder whitin the [`hosts`](./modules/hosts/) folder with the same hostname.
 7. Create a new `nix` file with the `flake.modules.darwin.your_hostname` top-level flake module and mix & match the available modules. 
 8. In the root folder of the project, run `sudo nix run nix-darwin/nix-darwin-25.11#darwin-rebuild -- switch`
+
+### PC
+
+1. Download this repo's contents.
+2. Add a line to the [`hostConfigurations.nix`](./modules/hosts/hostConfigurations.nix) file under `flake.nixosConfigurations` with your desired hostname.
+3. Create a subfolder whitin the [`hosts`](./modules/hosts/) folder with the same hostname.
+4. Create a new `nix` file with the `flake.modules.nixos.your_hostname` top-level flake module and mix & match the available modules.
+5. Boot a NixOS intaller on the target machine. I strongly suggest using `nix-community`'s excellent [`nixos-images`](https://github.com/nix-community/nixos-images).
+6. Follow `disko`'s [Quickstart Guide](https://github.com/nix-community/disko/blob/5ad85c82cc52264f4beddc934ba57f3789f28347/docs/quickstart.md) until point **6**.
+7. The install command can be changed to the below one in case you used the suggested installer:  
+`nix run github:nix-community/disko/latest -- --mode destroy,format,mount /tmp/disko-config.nix`
+8. Make sure that everything went as expected: `mount | grep /mnt`
+9. Copy this repo's contents with your modifications to `/mnt/etc/nixos`.
+10. Run `nixos-generate-config --no-filesystems --root /mnt`.
+11. Copy the resulting `hardware-configuration.nix` and the previously prepared `disko-config.nix` files to the host's folder.
+12. Make sure that the files' contents are part of the `flake.modules.nixos.your_hostname` module.
+13. Run `nixos-install --root /mnt --flake /mnt/etc/nixos#your_hostname`
 
 ## To Do
 
@@ -146,7 +180,8 @@ I'm happy I was able to check out other people's code and learn from it. I've us
 **[nix-darwin](https://github.com/nix-darwin/nix-darwin)**: MIT license  
 **[nix-homebrew](https://github.com/zhaofengli/nix-homebrew)**: MIT license  
 **[home-manager](https://github.com/nix-community/home-manager)**: MIT license  
-**[just](https://github.com/casey/just)**: CC0-1.0 license
+**[disko](https://github.com/nix-community/disko)**: MIT license  
+**[just](https://github.com/casey/just)**: CC0-1.0 license  
 
 ### Personal Configs
 
