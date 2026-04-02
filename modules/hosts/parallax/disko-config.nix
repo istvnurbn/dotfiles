@@ -79,12 +79,12 @@
           datasets = {
             data = {
               type = "zfs_fs";
-              mountpoint = "/srv/data";
+              options.mountpoint = "/srv/data";
             };
 
             public = {
               type = "zfs_fs";
-              mountpoint = "/srv/public";
+              options.mountpoint = "/srv/public";
             };
           };
         };

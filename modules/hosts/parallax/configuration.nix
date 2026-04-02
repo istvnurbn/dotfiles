@@ -36,6 +36,9 @@
     # List packages installed in system profile.
     environment.systemPackages = with pkgs; [zfs];
 
+    # Loading ZFS kernel module
+    boot.supportedFilesystems = ["zfs"];
+
     # Use the pool set up in disko-config
     boot.zfs = {
       forceImportAll = true;
