@@ -18,7 +18,7 @@ let
       nvd
       just-lsp
       git
-      git-absorb
+      lazygit
       zoxide
       fzf
       rsync
