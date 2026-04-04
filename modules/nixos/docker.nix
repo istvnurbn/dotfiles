@@ -1,4 +1,8 @@
-let
+{inputs, ...}: let
+  flake-file.inputs = {
+    dtop.url = "github:amir20/dtop";
+  };
+
   flake.modules.nixos.docker = {pkgs, ...}: {
     # Enable Docker
     virtualisation.docker = {
@@ -12,9 +16,9 @@ let
     # Adding my user to the Docker group
     users.extraGroups.docker.members = ["steve"];
 
-    # Lazydocker to monitor docker
-    environment.systemPackages = with pkgs; [lazydocker];
+    # dtop to monitor docker
+    environment.systemPackages = with inputs.dtop.packages.${pkgs.stdenv.hostPlatform.system}; [default];
   };
 in {
-  inherit flake;
+  inherit flake flake-file;
 }
