@@ -11,6 +11,7 @@
     home.file.".config/ghostty".source = dotsLink "dot-config/ghostty";
     home.file.".config/zed".source = dotsLink "dot-config/zed";
     home.file.".config/atuin".source = dotsLink "dot-config/atuin";
-    home.file.".config/mc".source = dotsLink "dot-config/mc";
+    home.file.".config/mc/ini".source = dotsLink "dot-config/mc/ini";
+    home.file.".local/share/mc/skins/catppuccin.ini".source = dotsLink "dot-local/share/mc/skins/catppuccin.ini";
   };
 }
