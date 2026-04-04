@@ -51,6 +51,7 @@ zstyle ":fzf-tab:complete:__zoxide_z:*" fzf-preview "ls --color $realpath"
 # Aliases
 alias ls="ls -h --group-directories-first --color=auto"
 alias mc="mc --nosubshell"
+alias cat="bat --paging=never"
 
 # Shell integrations
 eval "$(fzf --zsh)"
