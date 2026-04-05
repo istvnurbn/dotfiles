@@ -32,6 +32,7 @@ let
       btop
       fastfetch
       msedit # just for the fun of it
+      xdg-utils
     ];
 
     # Configure zsh as an interactive shell
