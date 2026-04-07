@@ -112,6 +112,7 @@ Personal modules to set up my user account on all systems.
 **[`user.nix`](./modules/steve/user.nix)**: Basic setup for the user profile on macOS and NixOS.  
 **[`home.nix`](./modules/steve/home.nix)**: User settings for `home-manager`.  
 **[`dots.nix`](./modules/steve/dots.nix)**: Making dotfiles mutable while still being part of the Nix store.  
+**[`catppuccin.nix`](./modules/steve/catppuccin.nix)**: apply the Catppuccin colorscheme in selected apps.  
 **[`dots/`](./modules/steve/dots)**: Houses the aformentioned dotfiles.
 
 *For more details, see the comments in each file.*
