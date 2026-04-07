@@ -20,6 +20,9 @@ let
         # Do not warn about dirty Git/Mercurial trees
         warn-dirty = false;
 
+        # The commit summary to use when committing changed flake lock files
+        commit-lock-file-summary = "chore: update flake.lock";
+
         # Nix automatically detects files in the store that have identical contents, and replaces them with hard links
         auto-optimise-store = !pkgs.stdenv.hostPlatform.isDarwin;
 

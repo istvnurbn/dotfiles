@@ -3,7 +3,7 @@ _default:
 
 # Update flake inputs to their latest revisions
 update:
-    nix flake update --flake ~/dotfiles
+    nix flake update --commit-lock-file --flake ~/dotfiles
 
 ## macOS
 
