@@ -18,6 +18,3 @@ Thumbs.db
 
 # Result of the nixos-rebuild/darwin-rebuild build command
 result*
-
-# Zed prompt database
-*.mdb
