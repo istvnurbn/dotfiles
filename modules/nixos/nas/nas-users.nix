@@ -110,12 +110,21 @@ let
         group = "homelab";
       };
 
-      # User for tautulli docker service
+      # Usxer for metube docker service
       metube = {
         isSystemUser = true;
         createHome = false;
         shell = "/bin/false";
         uid = 513;
+        group = "homelab";
+      };
+
+      # User for stirlingpdf docker service
+      stirlingpdf = {
+        isSystemUser = true;
+        createHome = false;
+        shell = "/bin/false";
+        uid = 514;
         group = "homelab";
       };
     };
