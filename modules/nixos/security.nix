@@ -21,6 +21,9 @@ let
       enable = true;
       openFirewall = true;
     };
+
+    # Declarative user management
+    users.mutableUsers = false;
   };
 in {
   inherit flake;
