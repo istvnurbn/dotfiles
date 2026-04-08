@@ -2,8 +2,8 @@ let
   flake.modules.nixos.nas-users = {
     # System users for docker services
     users.users = {
-      # User for filebrowser docker service
-      filebrowser = {
+      # User for traefik docker service
+      traefik = {
         isSystemUser = true;
         createHome = false;
         shell = "/bin/false";
@@ -11,12 +11,21 @@ let
         group = "homelab";
       };
 
-      # User for qbittorrent docker service
-      qbittorrent = {
+      # User for homepage docker service
+      homepage = {
         isSystemUser = true;
         createHome = false;
         shell = "/bin/false";
         uid = 502;
+        group = "homelab";
+      };
+
+      # User for filebrowser docker service
+      filebrowser = {
+        isSystemUser = true;
+        createHome = false;
+        shell = "/bin/false";
+        uid = 503;
         group = "homelab";
       };
 
@@ -25,7 +34,7 @@ let
         isSystemUser = true;
         createHome = false;
         shell = "/bin/false";
-        uid = 503;
+        uid = 504;
         group = "homelab";
       };
 
@@ -34,7 +43,7 @@ let
         isSystemUser = true;
         createHome = false;
         shell = "/bin/false";
-        uid = 504;
+        uid = 505;
         group = "homelab";
       };
 
@@ -43,7 +52,7 @@ let
         isSystemUser = true;
         createHome = false;
         shell = "/bin/false";
-        uid = 505;
+        uid = 506;
         group = "homelab";
       };
 
@@ -52,7 +61,34 @@ let
         isSystemUser = true;
         createHome = false;
         shell = "/bin/false";
-        uid = 506;
+        uid = 507;
+        group = "homelab";
+      };
+
+      # User for qbittorrent docker service
+      qbittorrent = {
+        isSystemUser = true;
+        createHome = false;
+        shell = "/bin/false";
+        uid = 508;
+        group = "homelab";
+      };
+
+      # User for qui-postgres docker service
+      qui-postgres = {
+        isSystemUser = true;
+        createHome = false;
+        shell = "/bin/false";
+        uid = 509;
+        group = "homelab";
+      };
+
+      # User for qui docker service
+      qui = {
+        isSystemUser = true;
+        createHome = false;
+        shell = "/bin/false";
+        uid = 510;
         group = "homelab";
       };
 
@@ -61,16 +97,25 @@ let
         isSystemUser = true;
         createHome = false;
         shell = "/bin/false";
-        uid = 507;
+        uid = 511;
         group = "homelab";
       };
 
-      # User for metube docker service
+      # User for tautulli docker service
+      tautulli = {
+        isSystemUser = true;
+        createHome = false;
+        shell = "/bin/false";
+        uid = 512;
+        group = "homelab";
+      };
+
+      # User for tautulli docker service
       metube = {
         isSystemUser = true;
         createHome = false;
         shell = "/bin/false";
-        uid = 508;
+        uid = 513;
         group = "homelab";
       };
     };
