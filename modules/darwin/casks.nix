@@ -23,6 +23,7 @@ let
       "utm"
       "gimp"
       "imageoptim"
+      "affinity"
     ];
   };
 in {
