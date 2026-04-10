@@ -45,6 +45,15 @@
       extraPools = ["tank"];
     };
 
+    # Enabling swap
+    swapDevices = [
+      {
+        device = "/var/lib/swapfile";
+        size = 16 * 1024; # 16 GiB
+        options = ["discard"];
+      }
+    ];
+
     # Enabling tailscale
     services.tailscale = {
       enable = true;
