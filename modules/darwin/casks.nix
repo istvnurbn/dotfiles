@@ -24,6 +24,7 @@ let
       "gimp"
       "imageoptim"
       "affinity"
+      "boring-notch"
     ];
   };
 in {

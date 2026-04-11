@@ -6,6 +6,10 @@
   outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
 
   inputs = {
+    boring-notch = {
+      url = "github:TheBoredTeam/homebrew-boring-notch";
+      flake = false;
+    };
     catppuccin.url = "github:catppuccin/nix/release-25.11";
     disko = {
       url = "github:nix-community/disko";

@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "boring-notch": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1773964932,
+        "narHash": "sha256-Q4VYyM2NGDaqo/DMaeiCH/u7VSQHalV32wlklKzYDAM=",
+        "owner": "TheBoredTeam",
+        "repo": "homebrew-boring-notch",
+        "rev": "f6fe997e0b14ff8a31eba724cc32e6cb7b2bf54b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "TheBoredTeam",
+        "repo": "homebrew-boring-notch",
+        "type": "github"
+      }
+    },
     "brew-src": {
       "flake": false,
       "locked": {
@@ -315,6 +331,7 @@
     },
     "root": {
       "inputs": {
+        "boring-notch": "boring-notch",
         "catppuccin": "catppuccin",
         "disko": "disko",
         "dtop": "dtop",

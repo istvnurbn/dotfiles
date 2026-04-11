@@ -8,8 +8,14 @@
       url = "github:homebrew/homebrew-core";
       flake = false;
     };
+
     homebrew-cask = {
       url = "github:homebrew/homebrew-cask";
+      flake = false;
+    };
+
+    boring-notch = {
+      url = "github:TheBoredTeam/homebrew-boring-notch";
       flake = false;
     };
   };
@@ -30,6 +36,7 @@
       taps = {
         "homebrew/homebrew-core" = inputs.homebrew-core;
         "homebrew/homebrew-cask" = inputs.homebrew-cask;
+        "TheBoredTeam/homebrew-boring-notch" = inputs.boring-notch;
       };
 
       # With mutableTaps disabled, taps can no longer be added imperatively with `brew tap`.
