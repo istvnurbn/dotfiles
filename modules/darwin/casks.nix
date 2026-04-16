@@ -25,6 +25,9 @@ let
       "imageoptim"
       "affinity"
       "boring-notch"
+      "dockdoor"
+      "linearmouse"
+      "markdown-preview-enhanced"
     ];
   };
 in {

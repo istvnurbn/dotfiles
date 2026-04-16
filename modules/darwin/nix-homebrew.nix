@@ -18,6 +18,12 @@
       url = "github:TheBoredTeam/homebrew-boring-notch";
       flake = false;
     };
+
+    # For markdown-preview-enhanced
+    xykong = {
+      url = "github:xykong/homebrew-tap";
+      flake = false;
+    };
   };
 
   flake.modules.darwin.nix-homebrew = {
@@ -37,6 +43,7 @@
         "homebrew/homebrew-core" = inputs.homebrew-core;
         "homebrew/homebrew-cask" = inputs.homebrew-cask;
         "TheBoredTeam/homebrew-boring-notch" = inputs.boring-notch;
+        "xykong/homebrew-tap" = inputs.xykong;
       };
 
       # With mutableTaps disabled, taps can no longer be added imperatively with `brew tap`.

@@ -347,7 +347,8 @@
         "nixpkgs-darwin": "nixpkgs-darwin",
         "nixpkgs-lib": [
           "nixpkgs"
-        ]
+        ],
+        "xykong": "xykong"
       }
     },
     "systems": {
@@ -362,6 +363,22 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "xykong": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1775716219,
+        "narHash": "sha256-6UyJ3pwQnlnrwBMCTCKoqGAb8VoZHdJLjSBGoBkM8jc=",
+        "owner": "xykong",
+        "repo": "homebrew-tap",
+        "rev": "d3a5c7a13c5648937c1643b598a5d269d60f264b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "xykong",
+        "repo": "homebrew-tap",
         "type": "github"
       }
     }

@@ -3,7 +3,7 @@
 {
   description = "istvnurbn's Nix Environment";
 
-  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
+  outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs;} (inputs.import-tree ./modules);
 
   inputs = {
     boring-notch = {
@@ -39,5 +39,9 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
     nixpkgs-darwin.url = "github:NixOS/nixpkgs/nixpkgs-25.11-darwin";
     nixpkgs-lib.follows = "nixpkgs";
+    xykong = {
+      url = "github:xykong/homebrew-tap";
+      flake = false;
+    };
   };
 }
