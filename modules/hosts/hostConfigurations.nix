@@ -14,6 +14,7 @@
   flake.nixosConfigurations = {
     # hostname = linux/linux-arm "hostname"
     parallax = linux "parallax";
+    vermilion = linux "vermilion";
   };
 
   flake.darwinConfigurations = {

@@ -25,6 +25,9 @@ let
       LC_TIME = "hu_HU.UTF-8";
     };
 
+    # Configure xserver keymap
+    services.xserver.xkb.layout = "hu";
+
     # Configure console keymap
     console.keyMap = "hu";
 
