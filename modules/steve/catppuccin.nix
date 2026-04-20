@@ -13,6 +13,7 @@
       accent = "mauve";
 
       # Enabling for selected apps
+      alacritty.enable = true;
       atuin.enable = true;
       bat.enable = true;
       btop.enable = true;
