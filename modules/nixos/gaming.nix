@@ -42,6 +42,12 @@
       ];
     };
 
+    services.sunshine = {
+      enable = true;
+      capSysAdmin = true;
+      openFirewall = true;
+    };
+
     environment.sessionVariables = {
       # Proton settings
       PROTON_ENABLE_HDR = "1";
