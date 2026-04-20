@@ -14,6 +14,7 @@
       # ../../nixos
       core
       security
+      plymouth
       kde
       pipewire
       devel
