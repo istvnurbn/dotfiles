@@ -21,6 +21,7 @@
       browsers
       gui-core
       gaming
+      openrgb
 
       # User module
       # ../../steve
