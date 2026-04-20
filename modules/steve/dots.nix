@@ -4,7 +4,7 @@
     dotsLink = path:
       config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/modules/steve/dots/${path}";
   in {
-    home.file.".abcde".source = dotsLink "dot-abcde";
+    home.file.".abcde.conf".source = dotsLink "dot-abcde.conf";
     home.file.".gitconfig".source = dotsLink "dot-gitconfig";
     home.file.".zshrc".source = dotsLink "dot-zshrc";
 
