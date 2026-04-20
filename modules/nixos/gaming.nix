@@ -1,6 +1,6 @@
 {inputs, ...}: let
   flake-file.inputs = {
-    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel?rev=a26503528b4a4ab7310c6167da549f8fbee91f30";
     scopebuddy.url = "github:HikariKnight/ScopeBuddy";
   };
 
