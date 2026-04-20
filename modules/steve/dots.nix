@@ -8,6 +8,7 @@
     home.file.".gitconfig".source = dotsLink "dot-gitconfig";
     home.file.".zshrc".source = dotsLink "dot-zshrc";
 
+    home.file.".config/alacritty/alacritty.toml".source = dotsLink "dot-config/alacritty/alacritty.toml";
     home.file.".config/atuin/config.toml".source = dotsLink "dot-config/atuin/config.toml";
     home.file.".config/dtop/config.yaml".source = dotsLink "dot-config/dtop/config.yaml";
     home.file.".config/ghostty/config".source = dotsLink "dot-config/ghostty/config";
