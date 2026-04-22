@@ -41,6 +41,10 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
     nixpkgs-darwin.url = "github:NixOS/nixpkgs/nixpkgs-25.11-darwin";
     nixpkgs-lib.follows = "nixpkgs";
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell?tag=v4.7.6";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     scopebuddy.url = "github:HikariKnight/ScopeBuddy";
     xykong = {
       url = "github:xykong/homebrew-tap";

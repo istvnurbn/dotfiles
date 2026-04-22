@@ -16,7 +16,9 @@
       security
       plymouth
       kde
-      cosmic
+      # gnome
+      # niri
+      # cosmic
       pipewire
       devel
       browsers
