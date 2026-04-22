@@ -7,7 +7,6 @@ let
       proton-pass
       gimp
       picard
-      audacious
     ];
   };
 in {
