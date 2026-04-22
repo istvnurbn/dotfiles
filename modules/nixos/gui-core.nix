@@ -8,11 +8,6 @@ let
       gimp
       picard
     ];
-
-    services.flatpak.packages = [
-      "com.github.tchx84.Flatseal"
-      "org.atheme.audacious"
-    ];
   };
 in {
   inherit flake;
