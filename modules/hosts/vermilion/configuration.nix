@@ -16,6 +16,7 @@
       security
       plymouth
       kde
+      cosmic
       pipewire
       devel
       browsers
