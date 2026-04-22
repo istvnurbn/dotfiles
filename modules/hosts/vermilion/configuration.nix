@@ -21,6 +21,7 @@
       browsers
       gui-core
       gaming
+      flatpak
       openrgb
 
       # User module
