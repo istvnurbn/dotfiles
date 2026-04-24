@@ -15,10 +15,7 @@
       core
       security
       plymouth
-      gnome
-      # kde
-      # niri
-      # cosmic
+      plasma
       pipewire
       bluetooth
       devel

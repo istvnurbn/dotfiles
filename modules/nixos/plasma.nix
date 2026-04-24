@@ -1,5 +1,5 @@
 let
-  flake.modules.nixos.kde = {pkgs, ...}: {
+  flake.modules.nixos.plasma = {pkgs, ...}: {
     # Enable the KDE Plasma Desktop Environment.
     services.displayManager.sddm.enable = true;
     services.desktopManager.plasma6.enable = true;

@@ -1,6 +1,6 @@
 {inputs, ...}: let
   flake-file.inputs.noctalia = {
-    url = "github:noctalia-dev/noctalia-shell?tag=v4.7.6";
+    url = "github:noctalia-dev/noctalia-shell";
     inputs.nixpkgs.follows = "nixpkgs";
   };
 
