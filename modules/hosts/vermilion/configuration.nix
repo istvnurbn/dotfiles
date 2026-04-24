@@ -15,11 +15,12 @@
       core
       security
       plymouth
-      kde
-      # gnome
+      gnome
+      # kde
       # niri
       # cosmic
       pipewire
+      bluetooth
       devel
       browsers
       gui-core

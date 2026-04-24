@@ -1,9 +1,12 @@
 let
-  flake.modules.nixos.browsers = {pkgs, ...}: {
+  flake.modules.nixos.browsers = {
     # Install firefox.
     programs.firefox.enable = true;
 
-    environment.systemPackages = with pkgs; [brave];
+    # programs.chromium = {
+    #   enable = true;
+    #   package = pkgs.brave;
+    # };
   };
 in {
   inherit flake;
