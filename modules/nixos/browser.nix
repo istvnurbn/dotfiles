@@ -1,3 +1,5 @@
+# [TODO] Add in betterfox-nix module
+# [TODO] Switch to Brave Origin once available
 {inputs, ...}: let
   flake-file.inputs.helium = {
     url = "github:schembriaiden/helium-browser-nix-flake";

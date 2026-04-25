@@ -1,3 +1,4 @@
+# [TODO] Implement plasma-manager via Home Manager
 let
   flake.modules.nixos.plasma = {pkgs, ...}: {
     # Enable the KDE Plasma Desktop Environment.

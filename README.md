@@ -86,16 +86,30 @@ These modules are available as `flake.modules.darwin.*`.
 
 All hosts are defined here and exposed via [`hostConfigurations.nix`](./modules/hosts/hostConfigurations.nix).
 
-| Host     | Platform | Notes                         |
-| -------- | -------- | ----------------------------- |
-| hexley   | macOS    | 14" MacBook Pro with M1 Pro   |
-| parallax | NixOS    | Minisforum NAB6 (homelab/NAS) |
+| Host      | Platform | Notes                         |
+| --------- | -------- | ----------------------------- |
+| hexley    | macOS    | 14" MacBook Pro with M1 Pro   |
+| parallax  | NixOS    | Minisforum NAB6 (homelab/NAS) |
+| vermilion | NixOS    | Desktop/Gaming PC             |
 
 ### nixos
 
 **[`core.nix`](./modules/nixos/core.nix)**: Core NixOS settings like internationalisation properties, boot parameters, and timezone.  
 **[`security.nix`](./modules/nixos/security.nix)**: Firewall, SSH, and sudo settings.  
 **[`docker.nix`](./modules/nixos/docker.nix)**: Enable Docker with minimal settings and tools.  
+**[`bluetooth.nix`](./modules/nixos/bluetooth.nix)**: Enable Bluetooth.  
+**[`browsesr.nix`](./modules/nixos/browser.nix)**: Web browsers and their settings.  
+**[`cosmic-desktop.nix`](./modules/nixos/cosmic-desktop.nix)**: System76's desktop environment, for testing.  
+**[`devel.nix`](./modules/nixos/devel.nix)**: GUI developer tools.  
+**[`flatpak.nix`](./modules/nixos/flatpak.nix)**: Flatpak and related settings.  
+**[`gaming.nix`](./modules/nixos/gaming.nix)**: Gaming related system tweaks and software.  
+**[`gnome.nix`](./modules/nixos/gnome.nix)**: Gnome desktop environment, for testing.  
+**[`gui-core.nix`](./modules/nixos/gui-core.nix)**: Essential GUI apps.  
+**[`niri.nix`](./modules/nixos/niri.nix)**: Niri with Noctalia Shell, for testing.  
+**[`openrgb.nix`](./modules/nixos/openrgb.nix)**: LED control for supported hardware.  
+**[`pipewire.nix`](./modules/nixos/pipewire.nix)**: Audio/video.  
+**[`plasma.nix`](./modules/nixos/plasma.nix)**: KDE Plasma desktop, current default.  
+**[`plymouth.nix`](./modules/nixos/plymouth.nix)**: Graphical boot.  
 
 #### nas
 
@@ -157,8 +171,14 @@ dscacheutil -flushcache
 
 There's a [TODO] tag in each file's header that needs attention. Right now, these are: 
 
-- Move Homebrew Cask to `nixpkgs` or `nix-casks`/`brew-nix` where it is feasible.
-- Move Homebrew Brews to `nixpkgs`.
+- [ ] Move Homebrew Cask to `nixpkgs` or `nix-casks`/`brew-nix` where it is feasible.
+- [ ] Move Homebrew Brews to `nixpkgs`.
+- [ ] Add in betterfox-nix module.
+- [ ] Switch to Brave Origin once available.
+- [ ] Break out the `gaming` module to indibvidual parts.
+- [ ] Implement `plasma-manager` via Home Manager
+- [ ] Switch to `vic/den` framewok.
+- [ ] Implement impermanence
 
 ## Inspiration
 
