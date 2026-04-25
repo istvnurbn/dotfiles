@@ -16,7 +16,6 @@
       security
       plymouth
       plasma
-      cosmic
       pipewire
       bluetooth
       devel
