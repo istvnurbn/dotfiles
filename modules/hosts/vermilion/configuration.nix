@@ -24,6 +24,7 @@
       gaming
       flatpak
       openrgb
+      vm
 
       # User module
       # ../../steve

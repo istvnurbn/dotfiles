@@ -1,7 +1,7 @@
 # [TODO] Break out to individual parts
 {inputs, ...}: let
   flake-file.inputs = {
-    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel?rev=a26503528b4a4ab7310c6167da549f8fbee91f30";
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel";
     scopebuddy.url = "github:HikariKnight/ScopeBuddy";
   };
 
