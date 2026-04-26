@@ -16,9 +16,7 @@
 [gpg]
     format = ssh
 [credential]
-	helper = git-credential-manager
-	credentialStore = secretservice
 	helper =
-	helper = /run/current-system/sw/bin/git-credential-manager
+	helper = /usr/local/bin/git-credential-manager
 [credential "https://dev.azure.com"]
 	useHttpPath = true

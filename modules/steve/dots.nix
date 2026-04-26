@@ -1,11 +1,18 @@
 # Helper allowing direct editing of dotfiles without requiring a full configuration rebuild.
 {
-  flake.modules.homeManager.steve = {config, ...}: let
+  flake.modules.homeManager.steve = {
+    config,
+    pkgs,
+    ...
+  }: let
     dotsLink = path:
       config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/modules/steve/dots/${path}";
   in {
     home.file.".abcde.conf".source = dotsLink "dot-abcde.conf";
-    home.file.".gitconfig".source = dotsLink "dot-gitconfig";
+    home.file.".gitconfig".source =
+      if pkgs.stdenv.hostPlatform.isDarwin
+      then dotsLink "dot-gitconfig-macos"
+      else dotsLink "dot-gitconfig-nixos";
     home.file.".zshrc".source = dotsLink "dot-zshrc";
 
     home.file.".config/alacritty/alacritty.toml".source = dotsLink "dot-config/alacritty/alacritty.toml";
