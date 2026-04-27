@@ -16,6 +16,7 @@
     "dockerfile": true,
     "toml": true,
   },
+
   "session": {
     "trust_all_worktrees": true,
   },
@@ -25,13 +26,18 @@
   },
 
   "project_panel": {
+    "dock": "left",
     "bold_folder_labels": true,
   },
 
-  "collaboration_panel": {
-    "button": false,
+  "outline_panel": {
+    "dock": "right",
   },
-  "notification_panel": {
+  "git_panel": {
+    "dock": "left",
+  },
+
+  "collaboration_panel": {
     "button": false,
   },
 
