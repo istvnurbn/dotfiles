@@ -41,7 +41,7 @@
       inputs.nixpkgs.follows = "nixpkgs-darwin";
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak";
-    nix-homebrew.url = "github:Azd325/nix-homebrew";
+    nix-homebrew.url = "github:zhaofengli/nix-homebrew";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
     nixpkgs-darwin.url = "github:NixOS/nixpkgs/nixpkgs-25.11-darwin";
     nixpkgs-lib.follows = "nixpkgs";

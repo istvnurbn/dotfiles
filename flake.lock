@@ -360,15 +360,15 @@
         "brew-src": "brew-src"
       },
       "locked": {
-        "lastModified": 1777047636,
+        "lastModified": 1777250621,
         "narHash": "sha256-WynkkG0hdZ5niYPJUbVg7oMfu8MVwGGzKZ6lKmfa+O8=",
-        "owner": "Azd325",
+        "owner": "zhaofengli",
         "repo": "nix-homebrew",
-        "rev": "8eb1c803b4f9cd8cb4db4b04fe692dfb915d09ba",
+        "rev": "aeb2069920742d0d6570089e8b3b8620050bacf2",
         "type": "github"
       },
       "original": {
-        "owner": "Azd325",
+        "owner": "zhaofengli",
         "repo": "nix-homebrew",
         "type": "github"
       }

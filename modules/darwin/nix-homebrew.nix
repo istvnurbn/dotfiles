@@ -1,9 +1,7 @@
 # nix-homebrew manages Homebrew installation on macOS using nix-darwin
 {inputs, ...}: let
   flake-file.inputs = {
-    # nix-homebrew.url = "github:zhaofengli/nix-homebrew";
-    # Temporary fix for brew not updating casks
-    nix-homebrew.url = "github:Azd325/nix-homebrew";
+    nix-homebrew.url = "github:zhaofengli/nix-homebrew";
 
     # Declarative tap management
     homebrew-core = {
