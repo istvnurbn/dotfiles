@@ -7,7 +7,6 @@ let
 
     # Disable unnecessary apps
     environment.plasma6.excludePackages = with pkgs.kdePackages; [
-      elisa
       konsole
     ];
   };
