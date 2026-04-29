@@ -35,7 +35,7 @@
       flake = false;
     };
     import-tree.url = "github:vic/import-tree";
-    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel";
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin/nix-darwin-25.11";
       inputs.nixpkgs.follows = "nixpkgs-darwin";

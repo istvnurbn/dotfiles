@@ -12,6 +12,7 @@
 
       # NixOS specific modules
       # ../../nixos
+      amdgpu
       core
       security
       plymouth
