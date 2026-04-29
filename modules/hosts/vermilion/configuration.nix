@@ -12,6 +12,7 @@
 
       # NixOS specific modules
       # ../../nixos
+      amdcpu
       amdgpu
       core
       security
