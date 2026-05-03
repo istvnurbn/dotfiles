@@ -5,6 +5,9 @@ let
       powerOnBoot = true;
       settings = {
         General = {
+          # Restricts all controllers to the specified transport. Default value
+          # is "dual", i.e. both BR/EDR and LE enabled (when supported by the HW).
+          ControllerMode = "dual";
           # Shows battery charge of connected devices on supported
           # Bluetooth adapters. Defaults to 'false'.
           Experimental = true;
