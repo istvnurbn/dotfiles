@@ -34,7 +34,7 @@
       heroic
       inputs.scopebuddy.packages.${pkgs.stdenv.hostPlatform.system}.default
       gamescope
-      wineWow64Packages.stable
+      wineWow64Packages.wayland
       protontricks
       protonup-rs
       vulkan-tools
