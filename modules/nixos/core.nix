@@ -1,3 +1,4 @@
+# [TODO] Break out to individual parts like locale, boot, networking
 let
   flake.modules.nixos.core = {
     # Use the systemd-boot EFI boot loader
