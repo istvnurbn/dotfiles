@@ -3,11 +3,11 @@ let
     boot = {
       plymouth = {
         enable = true;
-        theme = "abstract_ring";
+        theme = "deus_ex";
         themePackages = with pkgs; [
           # By default we would install all themes
           (adi1090x-plymouth-themes.override {
-            selected_themes = ["abstract_ring"];
+            selected_themes = ["deus_ex"];
           })
         ];
       };
