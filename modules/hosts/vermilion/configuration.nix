@@ -12,6 +12,7 @@
 
       # NixOS specific modules
       # ../../nixos
+      cachyos-kernel
       amdcpu
       amdgpu
       core

@@ -1,30 +1,10 @@
-{inputs, ...}: let
-  flake-file.inputs = {
-    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
-  };
-
-  flake.modules.nixos.amdgpu = {pkgs, ...}: {
-    # CachyOS kernel
-    nixpkgs.overlays = [inputs.nix-cachyos-kernel.overlays.default];
-
-    # Binary cache for CachyOS kernel
-    nix.settings.substituters = [
-      "https://attic.xuyh0120.win/lantian"
-      "https://cache.garnix.io"
+let
+  flake.modules.nixos.amdgpu = {
+    # Kernel modules for amdgpu
+    boot.kernelModules = [
+      "amdgpu"
+      "ntsync"
     ];
-    nix.settings.trusted-public-keys = [
-      "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
-      "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
-    ];
-
-    # Kernel settings for amdgpu
-    boot = {
-      kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-zen4;
-      kernelModules = [
-        "amdgpu"
-        "ntsync"
-      ];
-    };
 
     # Enable hardware accelerated graphics drivers
     hardware = {
@@ -43,5 +23,5 @@
     services.lact.enable = true;
   };
 in {
-  inherit flake flake-file;
+  inherit flake;
 }
