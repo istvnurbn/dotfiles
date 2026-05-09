@@ -133,7 +133,7 @@ let
         isSystemUser = true;
         createHome = false;
         shell = "/bin/false";
-        uid = 514;
+        uid = 515;
         group = "homelab";
       };
     };
