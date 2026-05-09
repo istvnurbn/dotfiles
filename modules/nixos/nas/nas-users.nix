@@ -127,6 +127,15 @@ let
         uid = 514;
         group = "homelab";
       };
+
+      # User for sabnzbd docker service
+      sabnzbd = {
+        isSystemUser = true;
+        createHome = false;
+        shell = "/bin/false";
+        uid = 514;
+        group = "homelab";
+      };
     };
   };
 in {
