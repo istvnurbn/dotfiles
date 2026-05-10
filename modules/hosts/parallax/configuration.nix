@@ -10,12 +10,15 @@
 
       # NixOS specific modules
       # ../../nixos
-      core
+      boot
+      locale
+      networking
       security
       docker
       nas-samba
       nas-users
       nas-acl
+      tailscale
 
       # User module
       # ../../steve
@@ -27,9 +30,12 @@
       hostName = "parallax";
       hostId = "d0519aef"; # Needed for ZFS head -c4 /dev/urandom | od -A none -t x4
       firewall = {
-        allowedTCPPorts = [80 443 6881 32400];
-        allowedUDPPorts = [41641];
-        trustedInterfaces = ["tailscale0"];
+        allowedTCPPorts = [
+          80
+          443
+          6881
+          32400
+        ];
       };
     };
 
@@ -54,16 +60,8 @@
       }
     ];
 
-    # Enabling tailscale
-    services.tailscale = {
-      enable = true;
-
-      # Enable routing features
-      useRoutingFeatures = "both";
-
-      # Disabling logging and telemetry
-      extraDaemonFlags = ["--no-logs-no-support"];
-    };
+    # Enable routing features in Tailscale
+    services.tailscale.useRoutingFeatures = "both";
 
     # Used for backwards compatibility, please read the changelog before changing.
     system.stateVersion = "25.11";

@@ -1,3 +1,4 @@
+# [TODO] Switch to stylix
 {inputs, ...}: let
   flake-file.inputs = {
     catppuccin.url = "github:catppuccin/nix/release-25.11";

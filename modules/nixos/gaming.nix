@@ -1,4 +1,5 @@
-# [TODO] Break out to individual parts
+# [TODO] Switch to different-name/steam-config-nix
+# [TODO] Break out to individual pieces
 {inputs, ...}: let
   flake-file.inputs = {
     scopebuddy.url = "github:HikariKnight/ScopeBuddy";

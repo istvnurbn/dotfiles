@@ -2,14 +2,12 @@ let
   flake.modules.nixos.nas-acl = {
     # ACL rules for common folders
     systemd.tmpfiles.rules = [
-      "d  /srv/docker                       2775  steve homelab - -"
-      "Z  /srv/docker                       2775  steve homelab - -"
-      "a+ /srv/docker                       -     -     -       - user:steve:rwx"
-      "a+ /srv/docker                       -     -     -       - default:user:steve:rwx"
-      "a+ /srv/docker                       -     -     -       - group:homelab:rwx"
-      "a+ /srv/docker                       -     -     -       - default:group:homelab:rwx"
-      "a+ /srv/docker/qbittorrent/postgres  -     -     -       - user:qui-postgres:rwx"
-      "a+ /srv/docker/qbittorrent/postgres  -     -     -       - default:user:qui-postgres:rwx"
+      "d  /srv/docker 2775  steve homelab - -"
+      "Z  /srv/docker 2775  steve homelab - -"
+      "a+ /srv/docker -     -     -       - user:steve:rwx"
+      "a+ /srv/docker -     -     -       - default:user:steve:rwx"
+      "a+ /srv/docker -     -     -       - group:homelab:rwx"
+      "a+ /srv/docker -     -     -       - default:group:homelab:rwx"
 
       "Z  /srv/data 2775  steve homelab - -"
       "a+ /srv/data -     -     -       - user:steve:rwx"

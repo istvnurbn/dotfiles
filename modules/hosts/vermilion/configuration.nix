@@ -1,6 +1,6 @@
 # Host config for my gaming PC
 {inputs, ...}: {
-  flake.modules.nixos.vermilion = {pkgs, ...}: {
+  flake.modules.nixos.vermilion = {
     imports = with inputs.self.modules.nixos; [
       # Common modules
       # ../../common
@@ -15,7 +15,9 @@
       cachyos-kernel
       amdcpu
       amdgpu
-      core
+      boot
+      locale
+      networking
       security
       plymouth
       plasma
@@ -27,45 +29,25 @@
       gaming
       flatpak
       openrgb
-      vm
+      tailscale
+      # vm
 
       # User module
       # ../../steve
       steve
     ];
 
-    # Use latest kernel.
-    # boot.kernelPackages = pkgs.linuxPackages_latest;
-
-    # Extra configuration and additional settings
-    networking = {
-      hostName = "vermilion";
-      firewall = {
-        allowedTCPPorts = [];
-        allowedUDPPorts = [41641];
-        trustedInterfaces = ["tailscale0"];
-      };
-    };
-
-    # List packages installed in system profile.
-    environment.systemPackages = with pkgs; [];
+    # Setting the hostname
+    networking.hostName = "vermilion";
 
     # Enabling swap
     swapDevices = [
       {
         device = "/var/lib/swapfile";
-        size = 32 * 1024; # 16 GiB
+        size = 32 * 1024; # 32 GiB
         options = ["discard"];
       }
     ];
-
-    # Enabling tailscale
-    services.tailscale = {
-      enable = true;
-
-      # Disabling logging and telemetry
-      extraDaemonFlags = ["--no-logs-no-support"];
-    };
 
     # Used for backwards compatibility, please read the changelog before changing.
     system.stateVersion = "25.11";

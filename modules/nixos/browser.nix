@@ -1,5 +1,6 @@
 # [TODO] Add in betterfox-nix module
 # [TODO] Switch to Brave Origin once available
+# [TODO] Switch to oxcl/nix-flake-helium-browser
 {inputs, ...}: let
   flake-file.inputs.helium = {
     url = "github:schembriaiden/helium-browser-nix-flake";
@@ -11,8 +12,8 @@
     programs.firefox.enable = true;
 
     environment.systemPackages = with pkgs; [
+      inputs.helium.packages.${stdenv.hostPlatform.system}.default
       brave
-      inputs.helium.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
   };
 in {

@@ -13,10 +13,6 @@ let
       }
     ];
 
-    # [TODO] Move to networking module
-    # Enable the firewall
-    networking.firewall.enable = true;
-
     # Enable the OpenSSH daemon
     services.openssh = {
       enable = true;

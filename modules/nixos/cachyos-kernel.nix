@@ -4,8 +4,11 @@
   };
 
   flake.modules.nixos.cachyos-kernel = {pkgs, ...}: {
-    # CachyOS kernel
+    # Enabling CachyOS kernel overlay
     nixpkgs.overlays = [inputs.nix-cachyos-kernel.overlays.default];
+
+    # Setting the kernel package
+    boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-zen4;
 
     # Binary cache for CachyOS kernel
     nix.settings.substituters = [
@@ -16,9 +19,6 @@
       "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
       "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
     ];
-
-    # Setting the kernel package
-    boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-zen4;
   };
 in {
   inherit flake flake-file;

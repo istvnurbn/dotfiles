@@ -5,16 +5,26 @@
   };
 
   flake.modules.darwin.home = {
-    imports = [inputs.home-manager.darwinModules.home-manager];
-    home-manager.useGlobalPkgs = true;
-    home-manager.useUserPackages = true;
-    home-manager.backupFileExtension = "backup";
+    imports = [
+      inputs.home-manager.darwinModules.home-manager
+      common
+    ];
   };
+
   flake.modules.nixos.home = {
-    imports = [inputs.home-manager.nixosModules.home-manager];
-    home-manager.useGlobalPkgs = true;
-    home-manager.useUserPackages = true;
-    home-manager.backupFileExtension = "backup";
+    imports = [
+      inputs.home-manager.nixosModules.home-manager
+      common
+    ];
+  };
+
+  # Common settings across NixOS and macOS
+  common = {
+    home-manager = {
+      useGlobalPkgs = true;
+      useUserPackages = true;
+      backupFileExtension = "backup";
+    };
   };
 in {
   inherit flake flake-file;
