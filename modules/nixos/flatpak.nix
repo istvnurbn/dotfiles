@@ -8,6 +8,8 @@
 
     services.flatpak = {
       enable = true;
+      update.auto.enable = false;
+      uninstallUnmanaged = true;
     };
 
     systemd.services.flatpak-repo = {

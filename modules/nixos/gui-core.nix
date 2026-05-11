@@ -9,6 +9,10 @@ let
       bitwarden-desktop
       vlc
     ];
+
+    services.flatpak.packages = [
+      "com.jeffser.Nocturne"
+    ];
   };
 in {
   inherit flake;
