@@ -21,6 +21,10 @@
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs-lib";
     };
+    gsr-ui-nix = {
+      url = "github:rPlakama/gsr-ui-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     helium = {
       url = "github:schembriaiden/helium-browser-nix-flake";
       inputs.nixpkgs.follows = "nixpkgs";

@@ -27,6 +27,7 @@
       browsers
       gui-core
       gaming
+      gsr
       flatpak
       openrgb
       tailscale
