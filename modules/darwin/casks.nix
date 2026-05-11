@@ -27,6 +27,7 @@ let
       "boring-notch"
       "linearmouse"
       "markdown-preview-enhanced"
+      "pearcleaner"
     ];
   };
 in {
