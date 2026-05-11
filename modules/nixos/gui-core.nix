@@ -7,6 +7,7 @@ let
       libreoffice
       proton-pass
       bitwarden-desktop
+      vlc
     ];
   };
 in {
