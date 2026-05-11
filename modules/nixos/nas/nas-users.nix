@@ -119,12 +119,21 @@ let
         group = "homelab";
       };
 
-      # User for stirlingpdf docker service
-      stirlingpdf = {
+      # User for bentopdf docker service
+      bentopdf = {
         isSystemUser = true;
         createHome = false;
         shell = "/bin/false";
         uid = 514;
+        group = "homelab";
+      };
+
+      # User for navidrome docker service
+      navidrome = {
+        isSystemUser = true;
+        createHome = false;
+        shell = "/bin/false";
+        uid = 515;
         group = "homelab";
       };
     };
