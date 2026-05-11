@@ -17,6 +17,9 @@
       ];
     };
 
+    # Enable udev rules for Steam hardware
+    hardware.steam-hardware.enable = true;
+
     services.sunshine = {
       enable = true;
       capSysAdmin = true;
