@@ -12,8 +12,12 @@
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
       localNetworkGameTransfers.openFirewall = true;
-      extraCompatPackages = [
-        pkgs.proton-ge-bin
+      extest.enable = true;
+      extraCompatPackages = with pkgs; [
+        proton-ge-bin
+      ];
+      extraPackages = with pkgs; [
+        hidapi
       ];
     };
 
