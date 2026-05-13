@@ -16,7 +16,6 @@ let
       "spotify"
       "calibre"
       "localsend"
-      "thaw"
       "tailscale-app"
       "musicbrainz-picard"
       "rustdesk"
@@ -24,10 +23,10 @@ let
       "gimp"
       "imageoptim"
       "affinity"
-      "boring-notch"
       "linearmouse"
       "markdown-preview-enhanced"
       "pearcleaner"
+      # "bartender"
     ];
   };
 in {
