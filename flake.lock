@@ -609,6 +609,7 @@
         ],
         "noctalia": "noctalia",
         "scopebuddy": "scopebuddy",
+        "umu": "umu",
         "xykong": "xykong"
       }
     },
@@ -709,6 +710,28 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "umu": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "dir": "packaging/nix",
+        "lastModified": 1777246644,
+        "narHash": "sha256-AYeL2KccJOEy3+C4FvzRRqvyZxFIURzdjasMx+WInts=",
+        "owner": "Open-Wine-Components",
+        "repo": "umu-launcher",
+        "rev": "7f360de5e7f8d92944dd5ccd75ed6b923644afee",
+        "type": "github"
+      },
+      "original": {
+        "dir": "packaging/nix",
+        "owner": "Open-Wine-Components",
+        "repo": "umu-launcher",
         "type": "github"
       }
     },

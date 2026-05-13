@@ -3,6 +3,10 @@
 {inputs, ...}: let
   flake-file.inputs = {
     scopebuddy.url = "github:HikariKnight/ScopeBuddy";
+    umu = {
+      url = "github:Open-Wine-Components/umu-launcher?dir=packaging/nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   flake.modules.nixos.gaming = {pkgs, ...}: {
@@ -38,8 +42,13 @@
       PROTON_XESS_UPGRADE = "1";
     };
 
+    nixpkgs.overlays = [
+      inputs.umu.overlays.default
+    ];
+
     environment.systemPackages = with pkgs; [
       heroic
+      umu-launcher
       inputs.scopebuddy.packages.${pkgs.stdenv.hostPlatform.system}.default
       gamescope
       wineWow64Packages.wayland

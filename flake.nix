@@ -54,6 +54,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     scopebuddy.url = "github:HikariKnight/ScopeBuddy";
+    umu = {
+      url = "github:Open-Wine-Components/umu-launcher?dir=packaging/nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     xykong = {
       url = "github:xykong/homebrew-tap";
       flake = false;
