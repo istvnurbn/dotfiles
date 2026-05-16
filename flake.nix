@@ -53,6 +53,7 @@
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    proton-cachyos.url = "github:powerofthe69/proton-cachyos-nix";
     scopebuddy.url = "github:HikariKnight/ScopeBuddy";
     umu = {
       url = "github:Open-Wine-Components/umu-launcher?dir=packaging/nix";

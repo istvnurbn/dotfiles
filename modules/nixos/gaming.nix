@@ -7,6 +7,7 @@
       url = "github:Open-Wine-Components/umu-launcher?dir=packaging/nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    proton-cachyos.url = "github:powerofthe69/proton-cachyos-nix";
   };
 
   flake.modules.nixos.gaming = {pkgs, ...}: {
@@ -19,6 +20,7 @@
       extest.enable = true;
       extraCompatPackages = with pkgs; [
         proton-ge-bin
+        proton-cachyos
       ];
       extraPackages = with pkgs; [
         hidapi
@@ -44,6 +46,7 @@
 
     nixpkgs.overlays = [
       inputs.umu.overlays.default
+      inputs.proton-cachyos.overlays.default
     ];
 
     environment.systemPackages = with pkgs; [

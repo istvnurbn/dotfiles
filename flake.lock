@@ -527,6 +527,22 @@
       "locked": {
         "lastModified": 1778443072,
         "narHash": "sha256-zi7/fsqM/kFdNuED//4WOCUtezGtKKqRNORjMvfwjnA=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "da5ad661ba4e5ef59ba743f0d112cbc30e474f32",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_7": {
+      "locked": {
+        "lastModified": 1778443072,
+        "narHash": "sha256-zi7/fsqM/kFdNuED//4WOCUtezGtKKqRNORjMvfwjnA=",
         "owner": "NixOS",
         "repo": "nixpkgs",
         "rev": "da5ad661ba4e5ef59ba743f0d112cbc30e474f32",
@@ -583,6 +599,24 @@
         "type": "github"
       }
     },
+    "proton-cachyos": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_6"
+      },
+      "locked": {
+        "lastModified": 1778652748,
+        "narHash": "sha256-6xwY6bOS0dC1+W9rSzfpu7eQPYyFHR55e06uHkDzoLo=",
+        "owner": "powerofthe69",
+        "repo": "proton-cachyos-nix",
+        "rev": "29103f9fac8fa7f2b682315baa7d548863ca04cb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "powerofthe69",
+        "repo": "proton-cachyos-nix",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "boring-notch": "boring-notch",
@@ -607,6 +641,7 @@
           "nixpkgs"
         ],
         "noctalia": "noctalia",
+        "proton-cachyos": "proton-cachyos",
         "scopebuddy": "scopebuddy",
         "umu": "umu",
         "xykong": "xykong"
@@ -614,7 +649,7 @@
     },
     "scopebuddy": {
       "inputs": {
-        "nixpkgs": "nixpkgs_6"
+        "nixpkgs": "nixpkgs_7"
       },
       "locked": {
         "lastModified": 1772751261,
