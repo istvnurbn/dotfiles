@@ -4,6 +4,9 @@ let
     services.tailscale = {
       enable = true;
 
+      # Do not bypass the firewall for all incoming traffic
+      extraSetFlags = ["--netfilter-mode=nodivert"];
+
       # Disabling logging and telemetry
       extraDaemonFlags = ["--no-logs-no-support"];
     };
