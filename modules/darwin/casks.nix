@@ -26,7 +26,7 @@ let
       "linearmouse"
       "markdown-preview-enhanced"
       "pearcleaner"
-      # "bartender"
+      "bartender"
     ];
   };
 in {
