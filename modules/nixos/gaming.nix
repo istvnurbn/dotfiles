@@ -50,16 +50,18 @@
     ];
 
     environment.systemPackages = with pkgs; [
-      heroic
-      umu-launcher
-      inputs.scopebuddy.packages.${pkgs.stdenv.hostPlatform.system}.default
-      gamescope
-      wineWow64Packages.wayland
-      protontricks
-      protonup-rs
-      vulkan-tools
       gamemode
       mangohud
+      gamescope
+      inputs.scopebuddy.packages.${pkgs.stdenv.hostPlatform.system}.default
+      wineWow64Packages.wayland
+      protontricks
+      protonup-qt
+      vulkan-tools
+    ];
+
+    services.flatpak.packages = [
+      "com.heroicgameslauncher.hgl"
     ];
   };
 in {
