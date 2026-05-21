@@ -15,6 +15,7 @@
       cachyos-kernel
       amdcpu
       amdgpu
+      eightbitdo
       boot
       locale
       networking
