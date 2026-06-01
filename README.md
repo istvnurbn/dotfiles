@@ -93,6 +93,7 @@ All hosts are defined here and exposed via [`hostConfigurations.nix`](./modules/
 
 ### nixos
 
+**[`8bitdo.nix`](./modules/nixos/8bitdo.nix)**: udev rules to detect 8BitDo Ultimate 2 Wireless controller.  
 **[`amdcpu.nix`](./modules/nixos/amdcpu.nix)**: Optimization for AMD CPUs.  
 **[`amdgpu.nix`](./modules/nixos/amdgpu.nix)**: Optimization for AMD GPUs.  
 **[`bluetooth.nix`](./modules/nixos/bluetooth.nix)**: Enable Bluetooth.  
@@ -105,6 +106,7 @@ All hosts are defined here and exposed via [`hostConfigurations.nix`](./modules/
 **[`flatpak.nix`](./modules/nixos/flatpak.nix)**: Flatpak and related settings.  
 **[`gaming.nix`](./modules/nixos/gaming.nix)**: Gaming related system tweaks and software.  
 **[`gnome.nix`](./modules/nixos/gnome.nix)**: Gnome desktop environment, for testing.  
+**[`gsr.nix`](./modules/nixos/gsr.nix)**: GPU Screen Recorder via flake.  
 **[`gui-core.nix`](./modules/nixos/gui-core.nix)**: Essential GUI apps.  
 **[`locale.nix`](./modules/nixos/locale.nix)**: Locale settings like internationalisation properties, keyboard, and timezone.  
 **[`networking.nix`](./modules/nixos/networking.nix)**: Basic networking settings.  
@@ -116,7 +118,8 @@ All hosts are defined here and exposed via [`hostConfigurations.nix`](./modules/
 **[`plymouth.nix`](./modules/nixos/plymouth.nix)**: Graphical boot.  
 **[`security.nix`](./modules/nixos/security.nix)**: Firewall, SSH, and sudo settings.  
 **[`tailscale.nix`](./modules/nixos/tailscale.nix)**: Tailscale and related settings.  
-**[`vm.nix`](./modules/nixos/vm.nix)**: Stuff to spin up virtual machines.  
+**[`virtualbox.nix`](./modules/nixos/virtualbox.nix)**: VirtualBox for virtualization.  
+**[`vm.nix`](./modules/nixos/vm.nix)**: QEMU for virtualization.  
 
 #### nas
 

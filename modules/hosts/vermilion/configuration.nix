@@ -32,7 +32,8 @@
       flatpak
       openrgb
       tailscale
-      vm
+      virtualbox
+      # vm
 
       # User module
       # ../../steve
