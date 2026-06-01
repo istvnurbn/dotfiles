@@ -6,7 +6,7 @@ let
       picard
       libreoffice
       proton-pass
-      bitwarden-desktop
+      # bitwarden-desktop
       vlc
     ];
 
