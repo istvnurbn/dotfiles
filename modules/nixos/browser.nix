@@ -12,7 +12,7 @@
     programs.firefox.enable = true;
 
     environment.systemPackages = with pkgs; [
-      inputs.helium.packages.${stdenv.hostPlatform.system}.default
+      # inputs.helium.packages.${stdenv.hostPlatform.system}.default
       brave
     ];
   };
