@@ -1,7 +1,7 @@
 # User environment management with Nix
 {inputs, ...}: let
   flake-file.inputs = {
-    home-manager.url = "github:nix-community/home-manager/release-25.11";
+    home-manager.url = "github:nix-community/home-manager/release-26.05";
   };
 
   flake.modules.darwin.home = {

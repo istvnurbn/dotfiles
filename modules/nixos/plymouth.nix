@@ -3,12 +3,9 @@ let
     boot = {
       plymouth = {
         enable = true;
-        theme = "deus_ex";
+        theme = "nixos-bgrt";
         themePackages = with pkgs; [
-          # By default we would install all themes
-          (adi1090x-plymouth-themes.override {
-            selected_themes = ["deus_ex"];
-          })
+          nixos-bgrt-plymouth
         ];
       };
 

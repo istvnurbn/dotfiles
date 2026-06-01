@@ -58,10 +58,7 @@
       protontricks
       protonup-qt
       vulkan-tools
-    ];
-
-    services.flatpak.packages = [
-      "com.heroicgameslauncher.hgl"
+      faugus-launcher
     ];
   };
 in {

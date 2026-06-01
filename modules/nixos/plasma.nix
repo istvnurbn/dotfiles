@@ -9,6 +9,10 @@ let
     environment.plasma6.excludePackages = with pkgs.kdePackages; [
       konsole
     ];
+    environment.systemPackages = with pkgs; [
+      kdePackages.partitionmanager
+      exfatprogs
+    ];
   };
 in {
   inherit flake;
