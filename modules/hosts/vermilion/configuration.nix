@@ -32,7 +32,8 @@
       flatpak
       openrgb
       tailscale
-      virtualbox
+      # virtualbox
+      # coolercontrol
       # vm
 
       # User module

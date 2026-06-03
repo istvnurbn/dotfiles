@@ -48,6 +48,7 @@
     # Use the pool set up in disko-config
     boot.zfs = {
       forceImportAll = true;
+      forceImportRoot = true;
       extraPools = ["tank"];
     };
 

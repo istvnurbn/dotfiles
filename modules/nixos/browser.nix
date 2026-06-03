@@ -12,9 +12,14 @@
     programs.firefox.enable = true;
 
     environment.systemPackages = with pkgs; [
-      # inputs.helium.packages.${stdenv.hostPlatform.system}.default
+      inputs.helium.packages.${stdenv.hostPlatform.system}.default
       brave
     ];
+
+    environment.sessionVariables = {
+      NIXOS_OZONE_WL = 1;
+      ELECTRON_OZONE_PLATFORM_HINT = "auto";
+    };
   };
 in {
   inherit flake flake-file;
