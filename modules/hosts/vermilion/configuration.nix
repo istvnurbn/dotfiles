@@ -32,6 +32,7 @@
       flatpak
       openrgb
       tailscale
+      localsend
       # virtualbox
       # coolercontrol
       # vm
