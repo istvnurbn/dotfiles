@@ -33,6 +33,7 @@ let
       fastfetch
       msedit # just for the fun of it
       xdg-utils
+      jq
     ];
 
     # Configure zsh as an interactive shell
