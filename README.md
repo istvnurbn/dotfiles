@@ -100,6 +100,7 @@ All hosts are defined here and exposed via [`hostConfigurations.nix`](./modules/
 **[`boot.nix`](./modules/nixos/boot.nix)**: Basic EFI boot settings.  
 **[`browser.nix`](./modules/nixos/browser.nix)**: Web browsers and their settings.  
 **[`cachyos-kernel.nix`](./modules/nixos/cachyos-kernel.nix)**: CachyOS kernel and tuning for better gaming.  
+**[`coolercontrol.nix`](./modules/nixos/coolercontrol.nix)**: Enables CoolerControl.  
 **[`cosmic-desktop.nix`](./modules/nixos/cosmic-desktop.nix)**: System76's desktop environment, for testing.  
 **[`devel.nix`](./modules/nixos/devel.nix)**: GUI developer tools.  
 **[`docker.nix`](./modules/nixos/docker.nix)**: Enable Docker with minimal settings and tools.  
@@ -109,6 +110,7 @@ All hosts are defined here and exposed via [`hostConfigurations.nix`](./modules/
 **[`gsr.nix`](./modules/nixos/gsr.nix)**: GPU Screen Recorder via flake.  
 **[`gui-core.nix`](./modules/nixos/gui-core.nix)**: Essential GUI apps.  
 **[`locale.nix`](./modules/nixos/locale.nix)**: Locale settings like internationalisation properties, keyboard, and timezone.  
+**[`localsend.nix`](./modules/nixos/localsend.nix)**: Enable LocalSend.  
 **[`networking.nix`](./modules/nixos/networking.nix)**: Basic networking settings.  
 **[`niri.nix`](./modules/nixos/niri.nix)**: Niri with Noctalia Shell, for testing.  
 **[`nix-settings.nix`](./modules/nixos/nix-settings.nix)**: NixOS specific garbage collection settings.  
@@ -118,6 +120,7 @@ All hosts are defined here and exposed via [`hostConfigurations.nix`](./modules/
 **[`plymouth.nix`](./modules/nixos/plymouth.nix)**: Graphical boot.  
 **[`security.nix`](./modules/nixos/security.nix)**: Firewall, SSH, and sudo settings.  
 **[`tailscale.nix`](./modules/nixos/tailscale.nix)**: Tailscale and related settings.  
+**[`virtualmonitor.nix`](./modules/nixos/virtualmonitor.nix)**: A virtual monitor to use with Sunshine.  
 **[`virtualbox.nix`](./modules/nixos/virtualbox.nix)**: VirtualBox for virtualization.  
 **[`vm.nix`](./modules/nixos/vm.nix)**: QEMU for virtualization.  
 
