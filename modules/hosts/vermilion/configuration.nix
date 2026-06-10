@@ -33,6 +33,7 @@
       openrgb
       tailscale
       localsend
+      docker
       # virtualmonitor
       # virtualbox
       # coolercontrol
