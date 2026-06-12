@@ -61,6 +61,23 @@
     "model_parameters": [],
   },
 
+  "context_servers": {
+    "mcp-nixos": {
+      "enabled": true,
+      "remote": false,
+      "command": "mcp-nixos",
+      "args": [],
+      "env": {},
+    },
+    "nix-agent": {
+      "enabled": true,
+      "remote": false,
+      "command": "nix-agent",
+      "args": [],
+      "env": {},
+    },
+  },
+
   "when_closing_with_no_tabs": "close_window",
 
   "theme": {
