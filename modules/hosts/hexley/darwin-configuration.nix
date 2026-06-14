@@ -22,7 +22,6 @@
       privsec
       dock
       finder
-      mcp
 
       # User module
       # ../../steve
