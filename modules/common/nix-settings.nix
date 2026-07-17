@@ -50,6 +50,7 @@ let
       '';
     };
 
+    programs.nh.enable = true;
     nixpkgs.config = {
       # Allow non-free packages
       allowUnfree = true;
