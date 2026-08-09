@@ -34,6 +34,7 @@ let
       msedit # just for the fun of it
       xdg-utils
       jq
+      helix
     ];
 
     # Configure zsh as an interactive shell
